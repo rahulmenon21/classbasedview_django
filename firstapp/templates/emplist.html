@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends 'master.html' %}
+    <title>Document</title>
+</head>
+<body>
+    {% block 'content' %}
+    <h1 style="margin-top: 4%; margin-left: 2%;"> <u> <i> Employee List </i> </u> </h1>
+    <table class="table">
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Email</td>
+            <td colspan="3">Action</td>
+        </tr>
+        {% for i in object_list %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td><a href="delete/{{i.id}}">delete</a></td>
+            <td><a href="delete2/{{i.id}}">delete2</a></td>
+            <td><a href="edit/{{i.id}}">edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>
